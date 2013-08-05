@@ -1,12 +1,7 @@
 package com.sys.applet;
 
-import java.io.FileInputStream;
-
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.InputStreamResource;
 
 import com.sys.applet.main.UserRank;
 import com.sys.spring.domain.admin.User;

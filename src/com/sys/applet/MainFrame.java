@@ -29,6 +29,11 @@ import com.sys.applet.main.WellcomeFrame;
  */
 public class MainFrame extends JFrame{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 112547L;
+
 	BorderLayout borderLayout1 = new BorderLayout();
     
 	JLabel userOut = new JLabel("",JLabel.CENTER);
@@ -160,7 +165,8 @@ public class MainFrame extends JFrame{
     	mainF.add(new UserTree()) ;
     	mainF.validate() ;
     }
-    private void outMouseReleased(MouseEvent e){
+    @SuppressWarnings("static-access")
+	private void outMouseReleased(MouseEvent e){
     	int rel=jop.showConfirmDialog(this,"你要退出系统吗？","退出",jop.YES_NO_OPTION ) ;
         if(rel==jop.YES_OPTION ){
             System.exit(0);
