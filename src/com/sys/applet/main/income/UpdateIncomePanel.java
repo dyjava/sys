@@ -75,7 +75,7 @@ public class UpdateIncomePanel extends CommonPanel {
     	income.setTitle(title) ;
     	income.setMoney(Double.parseDouble(money)) ;
     	income.setKindid(kind.getUid()) ;
-    	income.setKindTitle(kind.getTitle()) ;
+    	income.setKindtitle(kind.getTitle()) ;
     	income.setDatetime(time) ;
     	ConstService.incomeService.updateIncome(income, ConstService.user) ;
     	

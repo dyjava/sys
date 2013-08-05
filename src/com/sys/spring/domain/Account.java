@@ -11,7 +11,7 @@ public class Account {
 	private double money =0 ;
 	
 	private String kindid ;
-	private String kindTitle ;
+	private String kindtitle ;
 	private String datetime ;
 	private String userId ;
 	private String username ;
@@ -45,11 +45,11 @@ public class Account {
 	public void setKindid(String kindid) {
 		this.kindid = kindid;
 	}
-	public String getKindTitle() {
-		return kindTitle;
+	public String getKindtitle() {
+		return kindtitle;
 	}
-	public void setKindTitle(String kindTitle) {
-		this.kindTitle = kindTitle;
+	public void setKindtitle(String kindTitle) {
+		this.kindtitle = kindTitle;
 	}
 	public String getDatetime() {
 		return datetime;

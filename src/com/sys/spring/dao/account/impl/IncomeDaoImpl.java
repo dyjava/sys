@@ -21,7 +21,7 @@ public class IncomeDaoImpl extends AbstractDBDao implements IncomeDao {
 		
 		String sql = "INSERT INTO income(uid,title,money,kindId,kindTitle,datetime,userId,userName) VALUES (?,?,?,?,?,?,?,?)" ;
 //		log.info(sql+"	"+kind.getTitle()+"	"+kind.getNote()+"	"+kind.getParentId()) ;
-		Object[] params = {in.getUid(),in.getTitle(),in.getMoney(),in.getKindid(),in.getKindTitle(),in.getDatetime(),in.getUserId(),in.getUsername()} ;
+		Object[] params = {in.getUid(),in.getTitle(),in.getMoney(),in.getKindid(),in.getKindtitle(),in.getDatetime(),in.getUserId(),in.getUsername()} ;
 		
 		int result = this.update(sql, params) ;
 

@@ -62,7 +62,7 @@ public class AccountAction extends BaseAction {
 		kindlist = kindService.findKindList(1) ;
 		for(Kind k:kindlist){
 			if(String.valueOf(k.getUid()).equals(acc.getKindid())){
-				acc.setKindTitle(k.getTitle()) ;
+				acc.setKindtitle(k.getTitle()) ;
 				break ;
 			}
 		}

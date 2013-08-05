@@ -123,7 +123,7 @@ public class ListIncomePanel extends CommonPanel {
         	l.add(in.getUid()) ;
         	l.add(in.getTitle()) ;
         	l.add(DoubleUtil.money(in.getMoney())) ;
-        	l.add(in.getKindTitle()) ;
+        	l.add(in.getKindtitle()) ;
         	l.add(in.getDatetime()) ;
         	data.add(l) ;
         	count ++ ;

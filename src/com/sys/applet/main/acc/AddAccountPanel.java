@@ -88,7 +88,7 @@ public class AddAccountPanel extends CommonPanel{
         	for(Kind k:kindList){
         		if(k.getTitle().equals(kind)){
         			acc.setKindid(k.getUid()) ;
-        			acc.setKindTitle(k.getTitle()) ;
+        			acc.setKindtitle(k.getTitle()) ;
         			break ;
         		}
         	}

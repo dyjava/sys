@@ -85,7 +85,7 @@ public class AddIncomePanel extends CommonPanel {
       	for(Kind k:kindList){
       		if(k.getTitle().equals(kind)){
       			in.setKindid(k.getUid()) ;
-      			in.setKindTitle(k.getTitle()) ;
+      			in.setKindtitle(k.getTitle()) ;
       			break ;
       		}
       	}

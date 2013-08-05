@@ -68,7 +68,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		params.add(acc.getTitle()) ;
 		params.add(acc.getMoney()) ;
 		params.add(acc.getKindid()) ;
-		params.add(acc.getKindTitle()) ;
+		params.add(acc.getKindtitle()) ;
 		params.add(acc.getDatetime()) ;
 		params.add(acc.getUserId()) ;
 		params.add(acc.getUsername()) ;
@@ -107,9 +107,9 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 			sql.append(" kindid=? ,") ;
 			params.add(acc.getKindid()) ;
 		}
-		if(acc.getKindTitle()!=null){
+		if(acc.getKindtitle()!=null){
 			sql.append(" kindtitle=? ,") ;
-			params.add(acc.getKindTitle()) ;
+			params.add(acc.getKindtitle()) ;
 		}
 		sql.append(" id=?").append(" where id=?") ;
 		params.add(acc.getId()) ;

@@ -106,7 +106,7 @@ public class ListAccountPanel extends CommonPanel{
         	l.add(acc.getId()) ;
         	l.add(acc.getTitle()) ;
         	l.add(DoubleUtil.money(acc.getMoney())) ;
-        	l.add(acc.getKindTitle()) ;
+        	l.add(acc.getKindtitle()) ;
         	l.add(acc.getDatetime()) ;
         	data.add(l) ;
         	count ++ ;

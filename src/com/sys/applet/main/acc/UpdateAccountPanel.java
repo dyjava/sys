@@ -75,7 +75,7 @@ public class UpdateAccountPanel extends CommonPanel{
     	acc.setTitle(title) ;
     	acc.setMoney(Double.parseDouble(money)) ;
     	acc.setKindid(kind.getUid()) ;
-    	acc.setKindTitle(kind.getTitle()) ;
+    	acc.setKindtitle(kind.getTitle()) ;
     	acc.setDatetime(time) ;
     	ConstService.accService.updateAccount(acc, ConstService.user) ;
     	
