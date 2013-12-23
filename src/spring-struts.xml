@@ -64,4 +64,15 @@
 	  	<property name="imagesService"><ref bean="imagesService"/></property>
 	  	<property name="imageTypeService"><ref bean="imgTypeService"/></property>
  	</bean>
+ 	
+	<!-- ali -->
+	<bean id="whoAction" class="com.sys.web.struts2.ali.WhoAction" scope="prototype">
+	  	<property name="aliService"><ref bean="aliService"/></property>
+ 	</bean>
+	<bean id="buyAction" class="com.sys.web.struts2.ali.BuyAction" scope="prototype">
+	  	<property name="aliService"><ref bean="aliService"/></property>
+ 	</bean>
+	<bean id="saleAction" class="com.sys.web.struts2.ali.SaleAction" scope="prototype">
+	  	<property name="aliService"><ref bean="aliService"/></property>
+ 	</bean>
 </beans>

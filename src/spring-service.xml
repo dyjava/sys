@@ -70,4 +70,10 @@
 	<bean id="imagesService" class="com.sys.spring.service.img.impl.ImagesServiceImpl">
 	   <property name="dao" ><ref bean="imagesDao"/> </property>
 	</bean>
+	
+	<bean id="aliService" class="com.sys.spring.service.ali.impl.AliServiceImpl">
+	   <property name="whoDao" ><ref bean="whoDao"/> </property>
+	   <property name="buyDao" ><ref bean="buyDao"/> </property>
+	   <property name="saleDao" ><ref bean="saleDao"/> </property>
+	</bean>
 </beans>

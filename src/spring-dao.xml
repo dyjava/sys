@@ -196,4 +196,15 @@
 	<bean id="imagesDao" class="com.sys.spring.dao.img.impl.ImagesDaoImpl">
 	   <property name="jdbc" ><ref bean="jdbcTemplate2"/> </property>
 	</bean>
+	
+	<!-- 阿里 -->
+	<bean id="whoDao" class="com.sys.spring.dao.ali.impl.WholesalerDaoImpl">
+	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
+	</bean>
+	<bean id="buyDao" class="com.sys.spring.dao.ali.impl.BuyDaoImpl">
+	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
+	</bean>
+	<bean id="saleDao" class="com.sys.spring.dao.ali.impl.SaleDaoImpl">
+	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
+	</bean>
 </beans>
