@@ -50,6 +50,7 @@ public class BaseAction extends ActionSupport{
 	public static final String UPDATE	= "update" ;
 	public static final String ADD		= "add" ;
 	public static final String RESULT	= "result" ;
+	public static final String PAGE		= "page" ;
 	
 	public static final String ERROR	= "error" ;
 	

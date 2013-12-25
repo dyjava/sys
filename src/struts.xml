@@ -125,4 +125,29 @@
 		</action>
 	</package>
 	
+	
+	<package namespace="/ali" name="ali" extends="default">
+		<!-- who -->
+		<action name="who" class="whoAction">
+        	<result name="add">/main/ali/who_add.jsp</result>
+        	<result name="update">/main/ali/who_up.jsp</result>
+        	<result name="list">/main/ali/who_list.jsp</result>
+		</action>
+		
+		<!-- buy -->
+		<action name="buy" class="buyAction">
+        	<result name="add">/main/ali/buy_add.jsp</result>
+        	<result name="update">/main/ali/buy_up.jsp</result>
+        	<result name="list">/main/ali/buy_list.jsp</result>
+		</action>
+		
+		<!-- sale -->
+		<action name="sale" class="saleAction">
+        	<result name="add">/main/ali/sale_add.jsp</result>
+        	<result name="update">/main/ali/sale_up.jsp</result>
+        	<result name="list">/main/ali/sale_list.jsp</result>
+		</action>
+		
+	</package>
+	
 </struts>
