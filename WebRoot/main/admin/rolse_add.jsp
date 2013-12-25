@@ -27,7 +27,7 @@
                                 <table>
 	                                <tr>
 	                                <tbody>
-	                                <fieldset id='all'>
+	                                <fieldset id="all">
 		                                
 		                                <c:forEach items="${modulelist}" var="item" varStatus="status">
 		                                	<legend>
