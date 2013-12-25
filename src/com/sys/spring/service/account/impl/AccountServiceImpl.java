@@ -43,6 +43,8 @@ public class AccountServiceImpl implements AccountService {
 	public int insertAccount(Account account,User user) {
 		// TODO Auto-generated method stub
 		account.setUid(UUID.randomUUID().toString()) ;
+		account.setUserId(user.getUid()) ;
+		account.setUsername(user.getUsername()) ;
 		LogUtil.logInfo(user.getUsername(), "insertAccount", account.toString()) ;
 		return accountDao.insertAccount(account);
 	}

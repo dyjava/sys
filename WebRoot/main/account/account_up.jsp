@@ -13,7 +13,8 @@
 <div class="content">
     <div id="main" class="main">
         <div id="gamefeatures"><h2>账目添加</h2></div>
-        <form method="post" action="acc!add.do" name="form" id="form">
+        <form method="post" action="acc!up.do" name="form" id="form">
+        	<input type="hidden" name="acc.id" value="${acc.id}">
             <div id="gamemain">
                 <table>
                     <tbody>

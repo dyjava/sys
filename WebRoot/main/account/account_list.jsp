@@ -42,8 +42,8 @@
             </tr>
             <c:forEach items="${list}" var="item" varStatus="status">
 	    		<tr class='<c:if test="${status.index % 2==1}">trstyle2</c:if><c:if test="${status.index % 2==0}">trstyle1</c:if>'>
-	    			<td>${item.id}</td>
-	    			<td align="left"><a href='acc!update.do?type=update&acc.id=${item.id}'>${item.title}</a></td>
+	    			<td>${status.index+1}</td>
+	    			<td align="left"><a href='acc!up.do?acc.id=${item.id}'>${item.title}</a></td>
 					<td>${item.money}</td>
 					<td><c:forEach items="${kindlist}" var="it" varStatus="status2"><c:if test="${it.uid==item.kindid}">${it.title}</c:if></c:forEach></td>
 					<td>${item.datetime}</td>

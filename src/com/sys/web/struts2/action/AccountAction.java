@@ -31,61 +31,64 @@ public class AccountAction extends BaseAction {
 	 * 添加
 	 * @return
 	 */
-	public String insert(){
-		kindlist = kindService.findKindList(-1) ;
+	public String add(){
+		kindlist = kindService.findKindList(1) ;
 		if(acc.getDatetime()==null){
 			acc.setDatetime(this.getDate()) ;
 		}
-		return INSERT ;
+		if(acc.getTitle()==null){
+			return ADD ;
+		}
+
+		for(Kind k:kindlist){
+			if(k.getUid().equals(acc.getKindid())){
+				acc.setKindtitle(k.getTitle()) ;
+				break ;
+			}
+		}
+		
+		int result = accountService.insertAccount(acc,super.getUser()) ;
+		
+		if(result==1){
+			acc = new Account() ;
+			this.error = "成功" ;
+		}
+		return ADD ;
 	}
 
 	/**
 	 * 修改
 	 * @return
 	 */
-	public String update(){
-		acc = accountService.findAccountById(acc.getId(),super.getUser()) ;
-		return insert() ;
-	}
-
-	/**
-	 * 提交
-	 * @return
-	 */
-	public String addup(){
-		int result = 0 ;
-		//补充数据
-		acc.setUid(StringUtil.getUUID()) ;
-		acc.setDatetime(this.getDate()) ;
-		acc.setUserId(this.getUser().getUid()) ;
-		acc.setUsername(this.getUser().getUsername()) ;
+	public String up(){
 		kindlist = kindService.findKindList(1) ;
+		if(acc.getTitle()==null){
+			acc = accountService.findAccountById(acc.getId(),super.getUser()) ;
+			return UPDATE ;
+		}
+
 		for(Kind k:kindlist){
-			if(String.valueOf(k.getUid()).equals(acc.getKindid())){
+			if(k.getUid().equals(acc.getKindid())){
 				acc.setKindtitle(k.getTitle()) ;
 				break ;
 			}
 		}
 		
-		if(acc.getId()==0){
-			result = accountService.insertAccount(acc,super.getUser()) ;
-		} else if(acc.getId()>0){
-			result = accountService.updateAccount(acc,super.getUser()) ;
-		}
+		int result = accountService.updateAccount(acc,super.getUser()) ;
+		
 		if(result==1){
 			acc = new Account() ;
-			return list() ;
+			this.error = "成功" ;
 		}
-		
-		return INSERT ;
+		return list() ;
 	}
-	
+
 	/**
 	 * 列表
 	 * @return
 	 */
 	public String list(){
-		kindlist = kindService.findKindList(-1) ;
+		kindlist = kindService.findKindList(1) ;
 		list = accountService.findAccountList(this.getBeginDate(),this.getEndDate(),acc,super.getUser()) ;
 		return LIST ;
 	}

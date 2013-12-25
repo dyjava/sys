@@ -56,7 +56,8 @@
 		
 		<!-- account -->
 		<action name="acc" class="accountAction">
-        	<result name="insert">/main/account/account_add.jsp</result>
+        	<result name="add">/main/account/account_add.jsp</result>
+        	<result name="update">/main/account/account_up.jsp</result>
         	<result name="list">/main/account/account_list.jsp</result>
         	<interceptor-ref name="myInterceptorStack"/>
 		</action>
