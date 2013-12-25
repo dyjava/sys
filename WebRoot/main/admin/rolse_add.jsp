@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>角色添加</title>
-<link rel="StyleSheet" href="/css/admin/style.css" type="text/css"/>
+<link rel="StyleSheet" href="../css/admin/style.css" type="text/css"/>
 
 </head>
 <body>
