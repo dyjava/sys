@@ -17,18 +17,19 @@ public class WhoAction extends BaseAction {
 	private List<Wholesaler> list ;
 	
 	public String add(){
-		if(who==null || who.getId()==0){
+		if(who.getName()==null){
 			return ADD ;
 		}
 		int result = this.aliService.insertWho(who) ;
 		if(result == 1){
-			this.error = "添加成功" ;
+			this.error = "成功" ;
+			who = new Wholesaler() ;
 		}
 		return ADD ;
 	}
 	
 	public String up(){
-		if(who==null || who.getName()==null){
+		if(who.getName()==null){
 			who = this.aliService.getWhoById(who.getId()) ;
 			return UPDATE ;
 		}

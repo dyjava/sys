@@ -64,7 +64,7 @@ public class WholesalerDaoImpl extends AbstractDBDao implements WholesalerDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "select * from ali_wholesaler ";
+		String sqlStr = "select * from ali_wholesaler order by id ";
 		Object[] params = {} ;
 		List<Wholesaler> result = super.selectList(sqlStr,params, Wholesaler.class) ;
 		

@@ -15,16 +15,30 @@
             <tbody>
             <tr id="title">
                 <td>ID</td>
-                <td>批发商名</td>
-                <td>介绍</td>
-                <td>URL</td>
+                <td>批发商</td>
+                <td>商品</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>运费</td>
+                <td>日期</td>
+                <td>总价</td>
+                <td>均摊运费价</td>
             </tr>
             <c:forEach items="${list}" var="item" varStatus="status">
 	    		<tr class='<c:if test="${status.index % 2==1}">trstyle2</c:if><c:if test="${status.index % 2==0}">trstyle1</c:if>'>
-	    			<td>${item.id}</td>
-	    			<td align="left"><a href='who!up.do?who.id=${item.id}'>${item.name}</a></td>
-					<td>${item.info}</td>
-					<td>${item.url}</td>
+	    			<td>${status.index +1}</td>
+					<td>
+					<c:forEach items="${wholist}" var="it" varStatus="st">
+						<c:if test="${it.id==item.whoid}">${it.name}</c:if>
+					</c:forEach>
+					</td>
+	    			<td align="left"><a href='buy!up.do?buy.id=${item.id}'>${item.name}</a></td>
+					<td>${item.price}</td>
+					<td>${item.num}</td>
+					<td>${item.fare}</td>
+					<td>${item.date}</td>
+					<td>${item.price * item.num + item.fare}</td>
+					<td>${item.price + item.fare/item.num }</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -2,6 +2,7 @@ package com.sys.web.struts2.ali;
 
 import java.util.List;
 
+import com.sys.spring.domain.ali.Buy;
 import com.sys.spring.domain.ali.Sale;
 import com.sys.spring.service.ali.AliService;
 import com.sys.web.struts2.BaseAction;
@@ -15,31 +16,37 @@ public class SaleAction extends BaseAction {
 	private AliService aliService ;
 	private Sale sale = new Sale() ;
 	private List<Sale> list ;
+	private List<Buy> buylist ;
 
 	public String add(){
-		if(sale==null || sale.getId()==0){
+		buylist = this.aliService.getList(new Buy()) ;
+		if(sale.getBuyer()==null){
 			return ADD ;
 		}
 		int result = this.aliService.insertSale(sale) ;
 		if(result==1){
-			
+			this.error = "成功" ;
+			sale = new Sale() ;
 		}
-		return SUCCESS ;
+		return ADD ;
 	}
 	
 	public String up(){
-		if(sale==null || sale.getBuyer()==null){
+		buylist = this.aliService.getList(new Buy()) ;
+		if(sale.getBuyer()==null){
 			sale = this.aliService.getSaleById(sale.getId()) ;
 			return UPDATE ;
 		}
 		int result = this.aliService.updateSale(sale) ;
 		if(result == 1){
-			
+			this.error = "成功" ;
+			sale = new Sale() ;
 		}
 		return list() ;
 	}
 	
 	public String list(){
+		buylist = this.aliService.getList(new Buy()) ;
 		list = this.aliService.getList(sale) ;
 		return LIST ;
 	}
@@ -61,6 +68,12 @@ public class SaleAction extends BaseAction {
 	}
 	public void setList(List<Sale> list) {
 		this.list = list;
+	}
+	public List<Buy> getBuylist() {
+		return buylist;
+	}
+	public void setBuylist(List<Buy> buylist) {
+		this.buylist = buylist;
 	}
 
 	

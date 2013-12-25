@@ -84,7 +84,7 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "select * from ali_buy ";
+		String sqlStr = "select * from ali_buy order by whoid, id";
 		Object[] params = {} ;
 		List<Buy> result = super.selectList(sqlStr,params, Buy.class) ;
 		
@@ -108,6 +108,7 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 			sqlStr.append(" and date= ?") ;
 			params.add(buy.getDate()) ;
 		}
+		sqlStr.append(" order by whoid, id") ;
 		List<Buy> result = super.selectList(sqlStr.toString(), params.toArray(), Buy.class) ;
 
 		buf.append("|").append(sqlStr)
