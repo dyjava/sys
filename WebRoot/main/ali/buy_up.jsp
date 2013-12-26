@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="StyleSheet" href="../css/admin/style.css" type="text/css"/>
+<script language="javascript" type="text/javascript" src="../js/Calendar3.js" ></script>
 </head>
 <body>
 
@@ -17,16 +18,16 @@
             <div id="gamemain">
                 <table>
                     <tbody>
-                    <tr><td class="title"><b>批发商:</b></td>
+                    <tr><td class="title"><b>商品商:</b></td>
                     <td>
-                    <select id="buy.whoid" name="buy.whoid">
-						<c:forEach items="${wholist}" var="item" varStatus="status">
-							<option value="${item.id}" <c:if test="${item.id==buy.whoid}">selected</c:if>>${item.name}</option>
+                    <select id="buy.goodsid" name="buy.goodsid">
+						<c:forEach items="${goodslist}" var="item" varStatus="status">
+							<option value="${item.id}" <c:if test="${item.id==buy.goodsid}">selected</c:if>>${item.name}</option>
 						</c:forEach>
 					</select>
                     </td>
                     </tr>
-                    <tr><td class="title"><b>商品名:</b></td><td><input type="text" name="buy.name" value="${buy.name}" size=30></td></tr>
+                    <tr><td class="title"><b>进货说明:</b></td><td><input type="text" name="buy.name" value="${buy.name}" size=30></td></tr>
                     <tr><td class="title"><b>介 绍:</b></td><td><input type="text" name="buy.info" value="${buy.info}" size=30></td></tr>
                     <tr><td class="title"><b>单价:</b></td><td><input type="text" name="buy.price" value="${buy.price}" size=30></td></tr>
                     <tr><td class="title"><b>数量:</b></td><td><input type="text" name="buy.num" value="${buy.num}" size=30></td></tr>

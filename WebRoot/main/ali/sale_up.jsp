@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="StyleSheet" href="../css/admin/style.css" type="text/css"/>
+<script language="javascript" type="text/javascript" src="../js/Calendar3.js" ></script>
 </head>
 <body>
 
@@ -19,9 +20,9 @@
                     <tbody>
                     <tr><td class="title"><b>批发商:</b></td>
                     <td>
-                    <select id="sale.buy_id" name="sale.buy_id">
-						<c:forEach items="${buylist}" var="item" varStatus="status">
-							<option value="${item.id}" <c:if test="${item.id==sale.buy_id}">selected</c:if>>${item.name}</option>
+                    <select id="sale.goodsid" name="sale.goodsid">
+						<c:forEach items="${goodslist}" var="item" varStatus="status">
+							<option value="${item.id}" <c:if test="${item.id==sale.goodsid}">selected</c:if>>${item.name}</option>
 						</c:forEach>
 					</select>
                     </td>

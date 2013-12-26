@@ -23,14 +23,13 @@
                 <td>运费</td>
                 <td>日期</td>
                 <td>合计单价</td>
-                <td>单件利润</td>
             </tr>
             <c:forEach items="${list}" var="item" varStatus="status">
 	    		<tr class='<c:if test="${status.index % 2==1}">trstyle2</c:if><c:if test="${status.index % 2==0}">trstyle1</c:if>'>
 	    			<td>${status.index +1}</td>
 					<td>
-					<c:forEach items="${buylist}" var="it" varStatus="st">
-						<c:if test="${it.id==item.buy_id}"><a href='buy!up.do?buy.id=${it.id}'>${it.name}</a></c:if>
+					<c:forEach items="${goodslist}" var="it" varStatus="st">
+						<c:if test="${it.id==item.goodsid}"><a href='buy!up.do?buy.id=${it.id}'>${it.name}</a></c:if>
 					</c:forEach>
 					</td>
 	    			<td align="left"><a href='sale!up.do?sale.id=${item.id}'>${item.buyer}</a></td>
@@ -40,9 +39,6 @@
 					<td>${item.fare}</td>
 					<td>${item.date}</td>
 					<td>${(item.price-item.fare)/item.num}</td>
-					<td><c:forEach items="${buylist}" var="it" varStatus="st">
-						<c:if test="${it.id==item.buy_id}">${(item.price-item.fare)/item.num} - ${it.price} = ${(item.price-item.fare)/item.num - it.price}</c:if>
-					</c:forEach></td>
 				</tr>
 			</c:forEach>
 		</table>

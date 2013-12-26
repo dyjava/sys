@@ -201,6 +201,9 @@
 	<bean id="whoDao" class="com.sys.spring.dao.ali.impl.WholesalerDaoImpl">
 	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
 	</bean>
+	<bean id="goodsDao" class="com.sys.spring.dao.ali.impl.GoodsDaoImpl">
+	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
+	</bean>
 	<bean id="buyDao" class="com.sys.spring.dao.ali.impl.BuyDaoImpl">
 	   <property name="jdbc" ><ref bean="jdbcTemplate"/> </property>
 	</bean>

@@ -16,11 +16,11 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "insert into ali_buy (whoid,name,info,price,num,fare,date) values(?,?,?,?,?,?,?)" ;
-		Object[] params = {buy.getWhoid(),buy.getName(),buy.getInfo(),buy.getPrice(),buy.getNum(),buy.getFare(),buy.getDate()} ;
+		String sqlStr = "insert into ali_buy (goodsid,name,info,price,num,fare,date) values(?,?,?,?,?,?,?)" ;
+		Object[] params = {buy.getGoodsid(),buy.getName(),buy.getInfo(),buy.getPrice(),buy.getNum(),buy.getFare(),buy.getDate()} ;
 		int result = update(sqlStr, params) ;
 		buf.append("|").append(sqlStr).append(";")
-		.append(buy.getWhoid()).append(",")
+		.append(buy.getGoodsid()).append(",")
 		.append(buy.getName()).append(",")
 		.append(buy.getInfo()).append(",")
 		.append(buy.getPrice()).append(",")
@@ -40,9 +40,9 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 		
 		StringBuffer sqlStr = new StringBuffer("update ali_buy set ") ;
 		ArrayList<Object> params = new ArrayList<Object>() ;
-		if(buy.getWhoid()>0){
-			sqlStr.append(" whoid=?,") ;
-			params.add(buy.getWhoid()) ;
+		if(buy.getGoodsid()>0){
+			sqlStr.append(" goodsid=?,") ;
+			params.add(buy.getGoodsid()) ;
 		}
 		if(buy.getName()!=null){
 			sqlStr.append(" name=?,") ;
@@ -84,7 +84,7 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "select * from ali_buy order by whoid, id";
+		String sqlStr = "select * from ali_buy order by goodsid, id";
 		Object[] params = {} ;
 		List<Buy> result = super.selectList(sqlStr,params, Buy.class) ;
 		
@@ -100,38 +100,15 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 		
 		StringBuffer sqlStr = new StringBuffer("select * from ali_buy where 1=1" );
 		ArrayList<Object> params = new ArrayList<Object>() ;
-		if(buy.getWhoid()>0){
-			sqlStr.append(" and whoid = ?") ;
-			params.add(buy.getWhoid()) ;
+		if(buy.getGoodsid()>0){
+			sqlStr.append(" and goodsid = ?") ;
+			params.add(buy.getGoodsid()) ;
 		}
 		if(buy.getDate()!=null){
 			sqlStr.append(" and date= ?") ;
 			params.add(buy.getDate()) ;
 		}
-		sqlStr.append(" order by whoid, id") ;
-		List<Buy> result = super.selectList(sqlStr.toString(), params.toArray(), Buy.class) ;
-
-		buf.append("|").append(sqlStr)
-		.append("|").append(result.size()) 
-		.append("|").append(System.currentTimeMillis()-start) ;
-		logger.info(buf.toString()) ;
-		return result ;
-	}
-
-	public List<Buy> getRepertory(Buy buy) {
-		long start = System.currentTimeMillis() ;
-		StringBuffer buf = new StringBuffer() ;
-		
-		StringBuffer sqlStr = new StringBuffer("select * from ali_buy where 1=1" );
-		ArrayList<Object> params = new ArrayList<Object>() ;
-		if(buy.getWhoid()>0){
-			sqlStr.append(" and whoid = ?") ;
-			params.add(buy.getWhoid()) ;
-		}
-		if(buy.getDate()!=null){
-			sqlStr.append(" and date= ?") ;
-			params.add(buy.getDate()) ;
-		}
+		sqlStr.append(" order by goodsid, id") ;
 		List<Buy> result = super.selectList(sqlStr.toString(), params.toArray(), Buy.class) ;
 
 		buf.append("|").append(sqlStr)

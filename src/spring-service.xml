@@ -73,6 +73,7 @@
 	
 	<bean id="aliService" class="com.sys.spring.service.ali.impl.AliServiceImpl">
 	   <property name="whoDao" ><ref bean="whoDao"/> </property>
+	   <property name="goodsDao" ><ref bean="goodsDao"/> </property>
 	   <property name="buyDao" ><ref bean="buyDao"/> </property>
 	   <property name="saleDao" ><ref bean="saleDao"/> </property>
 	</bean>

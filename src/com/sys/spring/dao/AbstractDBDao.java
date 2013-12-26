@@ -112,7 +112,18 @@ public abstract class AbstractDBDao {
 			if(map.containsKey(f.getName())){
 				f.setAccessible(true);//设置私有、保护变量的可以访问权限。
 				try {
-					f.set(bean, map.get(f.getName())) ;
+					if(map.get(f.getName())!=null){
+						String item = String.valueOf(map.get(f.getName())) ;
+						if(f.getType().getName().equals("java.lang.String")){
+							f.set(bean, (String)item) ;
+						} else if(f.getType().getName().equals("int")){
+							f.set(bean, Integer.parseInt(item)) ;
+						} else if(f.getType().getName().equals("double")){
+							f.set(bean, Double.parseDouble(item)) ;
+						} else if(f.getType().getName().equals("long")){
+							f.set(bean, Long.parseLong(item)) ;
+						}
+					}
 				} catch (IllegalArgumentException e) {
 					e.printStackTrace();
 				} catch (IllegalAccessException e) {

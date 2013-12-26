@@ -3,7 +3,7 @@ package com.sys.spring.domain.ali;
 public class Sale {
 
 	private int id ;
-	private int buy_id ;
+	private int goodsid ;
 	private String buyer ;
 	private String buyer_ww ;
 	private double price ;
@@ -16,11 +16,11 @@ public class Sale {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getBuy_id() {
-		return buy_id;
+	public int getGoodsid() {
+		return goodsid;
 	}
-	public void setBuy_id(int buy_id) {
-		this.buy_id = buy_id;
+	public void setGoodsid(int goodsid) {
+		this.goodsid = goodsid;
 	}
 	public String getBuyer() {
 		return buyer;

@@ -3,7 +3,7 @@ package com.sys.spring.domain.ali;
 public class Buy {
 
 	private int id ;
-	private int whoid ;
+	private int goodsid ;
 	private String name ;
 	private String info ;
 	private double price ;
@@ -16,11 +16,11 @@ public class Buy {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getWhoid() {
-		return whoid;
+	public int getGoodsid() {
+		return goodsid;
 	}
-	public void setWhoid(int whoid) {
-		this.whoid = whoid;
+	public void setGoodsid(int goodsid) {
+		this.goodsid = goodsid;
 	}
 	public String getName() {
 		return name;

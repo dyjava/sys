@@ -3,7 +3,7 @@ package com.sys.web.struts2.ali;
 import java.util.List;
 
 import com.sys.spring.domain.ali.Buy;
-import com.sys.spring.domain.ali.Wholesaler;
+import com.sys.spring.domain.ali.Goods;
 import com.sys.spring.service.ali.AliService;
 import com.sys.web.struts2.BaseAction;
 
@@ -16,10 +16,10 @@ public class BuyAction extends BaseAction {
 	private AliService aliService ;
 	private Buy buy = new Buy() ;
 	private List<Buy> list ;
-	private List<Wholesaler> wholist ;
+	private List<Goods> goodslist ;
 
 	public String add(){
-		wholist = aliService.getList() ;
+		goodslist = this.aliService.getList(new Goods()) ;
 		if(buy.getName()==null){
 			return ADD ;
 		}
@@ -32,7 +32,7 @@ public class BuyAction extends BaseAction {
 	}
 	
 	public String up(){
-		wholist = aliService.getList() ;
+		goodslist = this.aliService.getList(new Goods()) ;
 		if(buy==null || buy.getName()==null){
 			buy = this.aliService.getBuyById(buy.getId()) ;
 			return UPDATE ;
@@ -46,7 +46,7 @@ public class BuyAction extends BaseAction {
 	}
 	
 	public String list(){
-		wholist = aliService.getList() ;
+		goodslist = this.aliService.getList(new Goods()) ;
 		list = this.aliService.getList(buy) ;
 		return LIST ;
 	}
@@ -69,11 +69,11 @@ public class BuyAction extends BaseAction {
 	public void setList(List<Buy> list) {
 		this.list = list;
 	}
-	public List<Wholesaler> getWholist() {
-		return wholist;
+	public List<Goods> getGoodslist() {
+		return goodslist;
 	}
-	public void setWholist(List<Wholesaler> wholist) {
-		this.wholist = wholist;
+	public void setGoodslist(List<Goods> goodslist) {
+		this.goodslist = goodslist;
 	}
 
 }

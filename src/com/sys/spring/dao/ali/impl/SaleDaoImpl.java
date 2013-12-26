@@ -16,11 +16,11 @@ public class SaleDaoImpl extends AbstractDBDao implements SaleDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "insert into ali_sale (buy_id,buyer,buyer_ww,num,price,fare,date) values(?,?,?,?,?,?,?)" ;
-		Object[] params = {sale.getBuy_id(),sale.getBuyer(),sale.getBuyer_ww(),sale.getNum(),sale.getPrice(),sale.getFare(),sale.getDate()} ;
+		String sqlStr = "insert into ali_sale (goodsid,buyer,buyer_ww,num,price,fare,date) values(?,?,?,?,?,?,?)" ;
+		Object[] params = {sale.getGoodsid(),sale.getBuyer(),sale.getBuyer_ww(),sale.getNum(),sale.getPrice(),sale.getFare(),sale.getDate()} ;
 		int result = update(sqlStr, params) ;
 		buf.append("|").append(sqlStr).append(" ")
-		.append(sale.getBuy_id()).append(",")
+		.append(sale.getGoodsid()).append(",")
 		.append(sale.getBuyer()).append(",")
 		.append(sale.getBuyer_ww()).append(",")
 		.append(sale.getNum()).append(",")
@@ -40,9 +40,9 @@ public class SaleDaoImpl extends AbstractDBDao implements SaleDao {
 		
 		StringBuffer sqlStr = new StringBuffer("update ali_sale set ") ;
 		ArrayList<Object> params = new ArrayList<Object>() ;
-		if(sale.getBuy_id()>0){
-			sqlStr.append(" buy_id=?,") ;
-			params.add(sale.getBuy_id()) ;
+		if(sale.getGoodsid()>0){
+			sqlStr.append(" goodsid=?,") ;
+			params.add(sale.getGoodsid()) ;
 		}
 		if(sale.getBuyer()!=null){
 			sqlStr.append(" buyer=?,") ;
@@ -100,9 +100,9 @@ public class SaleDaoImpl extends AbstractDBDao implements SaleDao {
 		
 		StringBuffer sqlStr = new StringBuffer("select * from ali_sale where 1=1" );
 		ArrayList<Object> params = new ArrayList<Object>() ;
-		if(sale.getBuy_id()>0){
-			sqlStr.append(" and buy_id = ?") ;
-			params.add(sale.getBuy_id()) ;
+		if(sale.getGoodsid()>0){
+			sqlStr.append(" and goodsid = ?") ;
+			params.add(sale.getGoodsid()) ;
 		}
 		if(sale.getBuyer()!=null){
 			sqlStr.append(" and buyer= ?") ;

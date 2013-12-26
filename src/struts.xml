@@ -135,6 +135,14 @@
         	<result name="list">/main/ali/who_list.jsp</result>
 		</action>
 		
+		<!-- goods -->
+		<action name="goods" class="goodsAction">
+        	<result name="add">/main/ali/goods_add.jsp</result>
+        	<result name="update">/main/ali/goods_up.jsp</result>
+        	<result name="list">/main/ali/goods_list.jsp</result>
+        	<result name="table">/main/ali/goods_table.jsp</result>
+		</action>
+		
 		<!-- buy -->
 		<action name="buy" class="buyAction">
         	<result name="add">/main/ali/buy_add.jsp</result>

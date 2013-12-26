@@ -16,5 +16,4 @@ public interface BuyDao {
 	
 	public List<Buy> getAllByBuy(Buy buy) ;
 	
-	public List<Buy> getRepertory(Buy buy) ;//查库存
 }
