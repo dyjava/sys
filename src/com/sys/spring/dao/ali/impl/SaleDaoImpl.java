@@ -104,11 +104,11 @@ public class SaleDaoImpl extends AbstractDBDao implements SaleDao {
 			sqlStr.append(" and goodsid = ?") ;
 			params.add(sale.getGoodsid()) ;
 		}
-		if(sale.getBuyer()!=null){
+		if(sale.getBuyer()!=null && sale.getBuyer().length()>0){
 			sqlStr.append(" and buyer= ?") ;
 			params.add(sale.getBuyer()) ;
 		}
-		if(sale.getDate()!=null){
+		if(sale.getDate()!=null && sale.getDate().length()>0){
 			sqlStr.append(" and date= ?") ;
 			params.add(sale.getDate()) ;
 		}

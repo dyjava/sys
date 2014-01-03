@@ -104,8 +104,8 @@ public class BuyDaoImpl extends AbstractDBDao implements BuyDao {
 			sqlStr.append(" and goodsid = ?") ;
 			params.add(buy.getGoodsid()) ;
 		}
-		if(buy.getDate()!=null){
-			sqlStr.append(" and date= ?") ;
+		if(buy.getDate()!=null && buy.getDate().length()>0){
+			sqlStr.append(" and date(date)= ?") ;
 			params.add(buy.getDate()) ;
 		}
 		sqlStr.append(" order by goodsid, id") ;

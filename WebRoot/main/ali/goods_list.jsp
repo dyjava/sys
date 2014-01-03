@@ -6,11 +6,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>模块列表</title>
 <link rel="StyleSheet" href="../css/admin/style.css" type="text/css" />
+<script language="javascript" type="text/javascript" src="../js/Calendar3.js" ></script>
 </head>
 <body>
 <div class="content">
     <div id="main" class="main">
         <div id="gamefeatures"><h2>列表</h2></div>
+        <div id="gamemain">
+        <form action="goods!list.do">
+       	批发商：<select id="goods.whoid" name="goods.whoid">
+     			<option value="0">全部</option>
+     			<c:forEach items="${wholist}" var="item" varStatus="status">
+				<option value="${item.id}" <c:if test="${item.id==goods.whoid }">selected</c:if>>${item.name}</option>
+				</c:forEach>
+			</select>
+       	<input type="submit" value="查询">
+        </form>
+        </div>
         <table class="GF-listTab">
             <tbody>
             <tr id="title">
