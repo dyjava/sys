@@ -73,7 +73,7 @@
                 <td>${count_num}件</td>
                 <td><fmt:formatNumber value="${count_fare}" minFractionDigits="2" />元</td>
                 <td> </td>
-                <td>${count_sum}</td>
+                <td><fmt:formatNumber value="${count_sum}" minFractionDigits="2" /></td>
                 <td><fmt:formatNumber value="${count_sum/count_num}" minFractionDigits="2" />元</td>
             </tr>
 		</table>
