@@ -24,7 +24,7 @@
 	    			<td>${item.id}</td>
 	    			<td align="left"><a href='who!up.do?who.id=${item.id}'>${item.name}</a></td>
 					<td>${item.info}</td>
-					<td>${item.url}</td>
+					<td><a href="${item.url}" target="_blank">${item.url}</a></td>
 				</tr>
 			</c:forEach>
 		</table>
