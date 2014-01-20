@@ -3,24 +3,24 @@
 #################
 
 *.pydevproject
-.project
-.metadata
+#.project
+#.metadata
 bin/
 tmp/
 *.tmp
-*.bak
+#*.bak
 *.swp
 *~.nib
 local.properties
-.classpath
-.settings/
+#.classpath
+#.settings/
 .loadpath
 
 # External tool builders
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+#*.launch
 
 # CDT-specific
 .cproject
@@ -73,7 +73,7 @@ build/
 *.log
 *.vspscc
 *.vssscc
-.builds
+#.builds
 *.pidb
 *.log
 *.scc
@@ -140,7 +140,7 @@ csx
 AppPackages/
 
 # Others
-sql/
+#sql/
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
