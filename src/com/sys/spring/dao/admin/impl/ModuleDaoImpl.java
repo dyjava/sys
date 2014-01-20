@@ -16,8 +16,12 @@ public class ModuleDaoImpl extends AbstractDBDao implements ModuleDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "insert into yd_module (name,url,type,parentid) values(?,?,?,?)" ;
-		Object[] params = {mod.getName(),mod.getUrl(),mod.getType(),mod.getParentid()} ;
+		int urltype = 0 ;
+		if(mod.getType()==2){
+			urltype = 1 ;
+		}
+		String sqlStr = "insert into yd_module (name,url,type,parentid,urltype) values(?,?,?,?,?)" ;
+		Object[] params = {mod.getName(),mod.getUrl(),mod.getType(),mod.getParentid(),urltype} ;
 		int result = update(sqlStr, params) ;
 		buf.append("|").append(sqlStr).append(" ")
 		.append(mod.getName()).append(",")
@@ -89,7 +93,7 @@ public class ModuleDaoImpl extends AbstractDBDao implements ModuleDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		StringBuffer sqlStr = new StringBuffer("select * from yd_module where 1=1" );
+		StringBuffer sqlStr = new StringBuffer("select * from yd_module where 1=1 and urltype in (0,1) " );
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		if(mod.getName()!=null){
 			sqlStr.append(" and name = ?") ;
@@ -120,7 +124,7 @@ public class ModuleDaoImpl extends AbstractDBDao implements ModuleDao {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		
-		String sqlStr = "select * from yd_module where id in("+ids+") ";
+		String sqlStr = "select * from yd_module where urltype in (0,1) and id in("+ids+") ";
 		ArrayList<Object> params = new ArrayList<Object>() ;
 //		params.add(ids) ;
 		List<Module> result = super.selectList(sqlStr.toString(), params.toArray(), Module.class) ;
