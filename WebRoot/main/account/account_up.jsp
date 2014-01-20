@@ -22,9 +22,9 @@
                     <tr><td class="title"><b>价格:</b></td><td><input type="text" name="acc.money" value="${acc.money}"></td></tr>
                     <tr><td class="title"><b>类别:</b></td>
                     <td>
-                    <select id="acc.kindid" name="acc.kindid">
+                    <select id="acc.kid" name="acc.kid">
 						<c:forEach items="${kindlist}" var="item" varStatus="status">
-							<option value="${item.uid}" <c:if test="${item.uid==acc.kindid }">selected</c:if>>${item.title}</option>
+							<option value="${item.id}" <c:if test="${item.id==acc.kid }">selected</c:if>>${item.title}</option>
 						</c:forEach>
 					</select>
                     </td>

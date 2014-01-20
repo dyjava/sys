@@ -15,6 +15,10 @@ import com.sys.web.struts2.BaseAction;
  */
 public class AccountTableAction extends BaseAction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3101299235053475570L;
 	private AccountService accountService ;
 	private KindService kindService ;
 	

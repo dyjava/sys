@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import com.sys.applet.ConstService;
@@ -88,6 +89,7 @@ public class AddAccountPanel extends CommonPanel{
         	for(Kind k:kindList){
         		if(k.getTitle().equals(kind)){
         			acc.setKindid(k.getUid()) ;
+        			acc.setKid(k.getId()) ;
         			acc.setKindtitle(k.getTitle()) ;
         			break ;
         		}
@@ -97,11 +99,12 @@ public class AddAccountPanel extends CommonPanel{
         	acc.setUsername(user.getUsername()) ;
         	
 			int re = ConstService.accService.insertAccount(acc, user) ;
-			
-    		message = "添加成功" ;
+			if(re==1){
+				message = "添加成功" ;
+			}
     		clear() ;
     	}
-    	jop.showMessageDialog(this, message) ;
+    	JOptionPane.showMessageDialog(this, message) ;
     }
     private void clear(){
     	titleText.setText("") ;

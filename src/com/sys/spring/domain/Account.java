@@ -10,6 +10,7 @@ public class Account {
 	private String title ;
 	private double money =0 ;
 	
+	private int kid ;
 	private String kindid ;
 	private String kindtitle ;
 	private String datetime ;
@@ -68,6 +69,12 @@ public class Account {
 	}
 	public void setUsername(String userName) {
 		this.username = userName;
+	}
+	public int getKid() {
+		return kid;
+	}
+	public void setKid(int kid) {
+		this.kid = kid;
 	}
 	
 	

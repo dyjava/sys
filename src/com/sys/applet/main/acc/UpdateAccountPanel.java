@@ -19,7 +19,11 @@ import com.sys.spring.domain.Kind;
  */
 public class UpdateAccountPanel extends CommonPanel{
 
-//  text
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8682544940082314455L;
+	//  text
 	JTextField titleText = new JTextField();
     JTextField moneyText = new JTextField();
     JComboBox kindBox = new JComboBox();
@@ -74,6 +78,7 @@ public class UpdateAccountPanel extends CommonPanel{
     	Account acc = ConstService.accService.findAccountById(id, ConstService.user) ;
     	acc.setTitle(title) ;
     	acc.setMoney(Double.parseDouble(money)) ;
+    	acc.setKid(kind.getId()) ;
     	acc.setKindid(kind.getUid()) ;
     	acc.setKindtitle(kind.getTitle()) ;
     	acc.setDatetime(time) ;

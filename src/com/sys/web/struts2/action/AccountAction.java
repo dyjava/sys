@@ -6,7 +6,6 @@ import com.sys.spring.domain.Account;
 import com.sys.spring.domain.Kind;
 import com.sys.spring.service.account.AccountService;
 import com.sys.spring.service.account.KindService;
-import com.sys.util.StringUtil;
 import com.sys.web.struts2.BaseAction;
 
 /** 
@@ -41,8 +40,10 @@ public class AccountAction extends BaseAction {
 		}
 
 		for(Kind k:kindlist){
-			if(k.getUid().equals(acc.getKindid())){
+			if(k.getId() == acc.getKid() ){
 				acc.setKindtitle(k.getTitle()) ;
+				acc.setKid(k.getId()) ;
+				acc.setKindid(k.getUid()) ;
 				break ;
 			}
 		}
@@ -68,8 +69,10 @@ public class AccountAction extends BaseAction {
 		}
 
 		for(Kind k:kindlist){
-			if(k.getUid().equals(acc.getKindid())){
+			if(k.getId() == acc.getKid() ){
 				acc.setKindtitle(k.getTitle()) ;
+				acc.setKid(k.getId()) ;
+				acc.setKindid(k.getUid()) ;
 				break ;
 			}
 		}

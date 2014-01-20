@@ -28,6 +28,14 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		params.add(begin) ;
 		params.add(end) ;
 		
+		if(account.getKid()>0){
+			sql.append(" and kid=?") ;
+			params.add(account.getKid()) ;
+		}
+		if(account.getKindid()!=null && account.getKindid().length()>0){
+			sql.append(" and kindid=?") ;
+			params.add(account.getKindid()) ;
+		}
 		if(account.getKindid()!=null && account.getKindid().length()>0){
 			sql.append(" and kindid=?") ;
 			params.add(account.getKindid()) ;
@@ -60,13 +68,14 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("insertAccount") ;
 		
-		String sql = "insert into account (uid,title,money,kindid,kindtitle,datetime,userid,username) values(?,?,?,?,?,?,?,?)" ;
+		String sql = "insert into account (uid,title,money,kid,kindid,kindtitle,datetime,userid,username) values(?,?,?,?,?,?,?,?,?)" ;
 //		log.info(sql+"	"+acc.getUid()+"	"+acc.getTitle()+"	"+acc.getMoney()+"	"+acc.getKindId()+"	"+acc.getKindTitle()
 //				+"	"+acc.getDatetime()+"	"+acc.getUserId()+"	"+acc.getUserName()) ;
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		params.add(acc.getUid()) ;
 		params.add(acc.getTitle()) ;
 		params.add(acc.getMoney()) ;
+		params.add(acc.getKid()) ;
 		params.add(acc.getKindid()) ;
 		params.add(acc.getKindtitle()) ;
 		params.add(acc.getDatetime()) ;
@@ -106,6 +115,10 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		if(acc.getKindid()!=null){
 			sql.append(" kindid=? ,") ;
 			params.add(acc.getKindid()) ;
+		}
+		if(acc.getKid()>0){
+			sql.append(" kid=? ,") ;
+			params.add(acc.getKid()) ;
 		}
 		if(acc.getKindtitle()!=null){
 			sql.append(" kindtitle=? ,") ;

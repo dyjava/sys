@@ -158,7 +158,7 @@ public class ListAccountPanel extends CommonPanel{
     			JTable table = (JTable)e.getSource() ;
     			int allRow = table.getRowCount() ;
     			int row = table.getSelectedRow() ;
-    			int col = table.getSelectedColumn() ;
+//    			int col = table.getSelectedColumn() ;
     			int id = Integer.parseInt(data.get(row).get(0).toString()) ;
 //    			System.out.println("Doublc Clicked!"+row+"/"+uid);
     			
